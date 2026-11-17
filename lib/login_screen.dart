@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Icon(Icons.lock_person, size: 80, color: Colors.indigo),
+              const Icon(Icons.lock_person, size: 80, color: Colors.lime),
               const SizedBox(height: 16),
               const Text('Welcome Back!', textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),

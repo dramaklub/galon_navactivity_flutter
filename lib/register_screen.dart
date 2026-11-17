@@ -42,7 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Icon(Icons.person_add, size: 80, color: Colors.indigo),
+              const Icon(Icons.person_add, size: 80, color: Colors.lime),
               const SizedBox(height: 16),
               const Text('Create an Account', textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),

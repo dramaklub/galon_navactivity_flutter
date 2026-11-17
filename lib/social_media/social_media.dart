@@ -68,8 +68,8 @@ class _SocialMediaPageState extends State<SocialMediaPage> {
                 final post = posts[index];
  
                 return PostCard(
-                  key: ObjectKey(post),
-                  post: post,
+                  key: ObjectKey(posts[index]),
+                  post: posts[index],
                 );
               },
             ),

@@ -1,23 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:galon_navigation_app/demo_auth.dart';
-import 'package:galon_navigation_app/login_screen.dart';
-
+import 'demo_auth.dart';
+import 'login_screen.dart';
+ 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
-
-  void _logout(BuildContext context) {
+  final String username;
+ 
+  const ProfilePage({
+    super.key,
+    required this.username,
+  });
+ 
+  void logout(BuildContext context) {
     DemoAuth.logout();
+ 
     Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute(builder: (_) => const LoginScreen()),
+      MaterialPageRoute(
+        builder: (context) => const LoginScreen(),
+      ),
       (route) => false,
     );
   }
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Profile'),
+        title: const Text('Student Profile'),
       ),
       body: ListView(
         padding: const EdgeInsets.all(24),
@@ -32,6 +40,7 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
+ 
           const Text(
             'Claudee Matthew M. Galon',
             textAlign: TextAlign.center,
@@ -40,7 +49,14 @@ class ProfilePage extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+          const SizedBox(height: 8),
+ 
+          Text(
+            'Logged in as: $username',
+            textAlign: TextAlign.center,
+          ),
           const SizedBox(height: 24),
+ 
           const Card(
             child: Column(
               children: [
@@ -52,7 +68,7 @@ class ProfilePage extends StatelessWidget {
                 ListTile(
                   leading: Icon(Icons.school),
                   title: Text('Course and Section'),
-                  subtitle: Text('BSIT — CCE106 - 3447'),
+                  subtitle: Text('BSIT - CCE106 (4745)'),
                 ),
                 ListTile(
                   leading: Icon(Icons.email),
@@ -63,10 +79,11 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
+ 
           OutlinedButton.icon(
-            onPressed: () => _logout(context),
+            onPressed: () => logout(context),
             icon: const Icon(Icons.logout),
-            label: const Text('Log Out'),
+            label: const Text('Logout'),
           ),
         ],
       ),

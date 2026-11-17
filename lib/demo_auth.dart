@@ -29,3 +29,4 @@ class DemoAuth {
     currentUsername = null;
   }
 }
+ 
